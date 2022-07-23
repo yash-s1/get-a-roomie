@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'inix-font';
+    src: url("../res/font.ttf");
+}
+
+nav {
+    background: #001219;
+    height: 5rem;
+    margin-right: -8px;
+    margin-left: -8px;
+}
+.menuItems {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+nav .menuItems li {
+    margin-top: 28px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: inix-font;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+nav .menuItems li a {
+    text-decoration: none;
+    color: #94D2BD;
+    font-size: 20px;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+
+nav .menuItems li a::before {
+    content: attr(data-item);
+    transition: 0.5s;
+    color: #EE9B00;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+}
+nav .menuItems li a:hover::before {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.section-title {
+    background-color: rgb(93, 21, 23);
+    font-family: inix-font, sans-serif;
+    font-weight: 1800;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: -9px -8px -16px;
+}
+
+.title-word {
+    animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+}
+
+.title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+}
+
+@keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+}
+
+#logout-span{
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin-top: 12px;
+    perspective: 1000px;
+}
+
+#logout-btn-nav{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+
+}
+#logout-btn-nav:before,
+#logout-btn-nav:after{
+    position: absolute;
+    content: "LOGOUT";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E9D8A6;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#logout-btn-nav:before{
+    color: #fff;
+    background: #005F73;
+    transform: rotateY(0deg) translateZ(25px);
+}
+#logout-btn-nav:after{
+    color: #fff;
+    background: #BB3E03;
+    transform: rotateX(90deg) translateZ(25px);
+}
+#logout-btn-nav:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+}

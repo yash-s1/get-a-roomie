@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="html-css/auth-css.css">
+  <link rel="stylesheet" href="html-css/loader.css">
+</head>
+<body>
+
+<div class="loader-div" style="display: none" id="loader-div">
+  <h1 class="title">Loading</h1>
+  <div class="rainbow-marker-loader" style="margin-left: 600px"></div>
+</div>
+
+<section class="forms-section" style="display: block" id="forms-div">
+  <h2 class="section-title">
+    <span class="title-word title-word-1">GET</span>
+    <span class="title-word title-word-2">A</span>
+    <span class="title-word title-word-3">ROOMIE</span>
+  </h2>
+  <div class="forms">
+    <div class="form-wrapper is-active">
+      <button type="button" class="switcher switcher-login">
+        Login
+        <span class="underline"></span>
+      </button>
+      <form class="form form-login">
+        <fieldset>
+          <legend>Please, enter your email and password for login.</legend>
+          <div class="input-block">
+            <label for="login-email">EMail</label>
+            <input id="login-email" type="email" required>
+          </div>
+          <div class="input-block">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" required>
+          </div>
+        </fieldset>
+        <button id="btn-login" type="submit" class="btn-login">Login</button>
+        <div class="alert-login" id="alert-login">
+          <span id="alert-close-btn-login" class="alert-close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+      </form>
+    </div>
+    <div class="form-wrapper">
+      <button type="button" class="switcher switcher-signup">
+        Sign Up
+        <span class="underline"></span>
+      </button>
+      <form class="form form-signup">
+        <fieldset>
+          <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+          <div class="input-block">
+            <label for="signup-email">EMail</label>
+            <input id="signup-email" type="email" required>
+          </div>
+          <div class="input-block">
+            <label for="signup-password">Password</label>
+            <input id="signup-password" type="password" required>
+          </div>
+        </fieldset>
+        <button id="btn-signup" type="submit" class="btn-signup">Continue</button>
+        <div class="alert-signup" id="alert-signup">
+          <span id="alert-close-btn-signup" class="alert-close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</body>
+<script>
+  const switchers = [...document.querySelectorAll(".switcher")];
+
+  switchers.forEach((item) => {
+    item.addEventListener("click", function () {
+      switchers.forEach((item) =>
+              item.parentElement.classList.remove("is-active")
+      );
+      this.parentElement.classList.add("is-active");
+    });
+  });
+
+</script>
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="js/auth-script.js"></script>
+
+</html>

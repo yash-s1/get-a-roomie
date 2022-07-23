@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile | Get A Roomie</title>
+    <link rel="stylesheet" href="html-css/navbar-css.css">
+    <link rel="stylesheet" href="html-css/profile-self-css.css">
+    <link rel="stylesheet" href="html-css/loader.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+        <div class="nav-bar" style="margin-top: 9px">
+            <h2 class="section-title" style="height: 80px; font-weight: bold">
+                <span class="title-word title-word-1">GET</span>
+                <span class="title-word title-word-2">A</span>
+                <span class="title-word title-word-3">ROOMIE</span>
+            </h2>
+            <section>
+                <nav>
+                    <ul class="menuItems">
+                        <li><a href='landing.html' data-item='Home'>Home</a></li>
+                        <li><a href='#' data-item='Messages'>Messages</a></li>
+                        <li><a href='#' data-item='About'>About</a></li>
+                        <li><a data-item='Profile' style="color: #EE9B00">Profile</a></li>
+                        <li id="logout-span"><a data-item='Logout' id="logout-btn-nav"></a></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+
+        <div id="loader-div" style="display: none; margin-top: -80px">
+            <h1 class="title">Loading</h1>
+            <div class="rainbow-marker-loader" style="margin-left: 600px"></div>
+        </div>
+
+    <div id="body" style="display: block">
+        <div class="container emp-profile">
+            <div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="res/img/profile.png" style="width: 10rem" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <h5 id="main-name-fetch"></h5>
+                            <h6 id="profession-fetch"></h6>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" value="Edit Profile" id="edit-profile-btn"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-8">
+                        <div id="myTabContent">
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-4" style="color: #072065" id="about-txt">About Me</div>
+                                    <div class="col-md-6" id="show-user-about"></div>
+                                    <label class="col-md-10" id="field-1" style="display: none"> About Me
+                                        <textarea style="margin-left: 180px" id="input-aboutme"></textarea>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4" style="color: #072065" id="name-txt">Name</div>
+                                    <div class="col-md-6" id="show-user-name"></div>
+                                    <label class="col-md-10" id="field-2" style="display: none"> Name
+                                        <input type="text" style="margin-left: 210px" id="input-name">
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4" style="color: #072065" id="email-txt">Email</div>
+                                    <div class="col-md-6" id="show-user-email"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4" style="color: #072065" id="phone-txt">Phone</div>
+                                    <div class="col-md-6" id="show-user-phone"></div>
+                                    <label class="col-md-10" id="field-3" style="display: none"> Phone
+                                        <input type="text" style="margin-left: 205px" id="input-phone">
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4" style="color: #072065" id="prof-txt">Profession</div>
+                                    <div class="col-md-6" id="show-user-prof"></div>
+                                    <label class="col-md-10" id="field-4" style="display: none"> Profession
+                                        <input type="text" style="margin-left: 175px" id="input-profession">
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4" style="color: #072065" id="interest-txt">Interests</div>
+                                    <div class="col-md-6" id="show-user-interest"></div>
+                                    <label class="col-md-10" id="field-5" style="display: none"> Interests
+                                        <input type="text" style="margin-left: 188px" id="input-interests">
+                                    </label>
+                                </div>
+                                <br>
+                                <input type="submit" class="profile-save-btn" value="Save" id="save-profile-btn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="js/nav-auth.js"></script>
+<script type="module" src="js/self-profile-save.js"></script>
+
+</html>
